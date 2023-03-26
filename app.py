@@ -10,7 +10,7 @@ import numpy as np
 app = Flask(__name__)
 CORS(app)
 
-model = load_model('customeModel.h5')
+model = load_model('model.h5')
 
 #Allow files with extension png, jpg and jpeg
 ALLOWED_EXT = set(['jpg' , 'jpeg' , 'png'])
@@ -20,7 +20,7 @@ def allowed_file(filename):
            
 # Function to load and prepare the image in right shape
 def read_image(filename):
-    img = load_img(filename, target_size=(224, 224))
+    img = load_img(filename, target_size=(180, 180))
     x = image.img_to_array(img)
     x = np.expand_dims(x, axis=0)
     x = preprocess_input(x)
