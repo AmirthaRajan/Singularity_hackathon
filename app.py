@@ -3,7 +3,6 @@ from flask import Flask, jsonify, request, send_from_directory, render_template
 from flask_cors import CORS
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing.image import load_img
-from tensorflow.keras.applications.densenet import preprocess_input
 from tensorflow.keras.preprocessing import image
 import numpy as np
 
@@ -23,7 +22,6 @@ def read_image(filename):
     img = load_img(filename, target_size=(180, 180))
     x = image.img_to_array(img)
     x = np.expand_dims(x, axis=0)
-    x = preprocess_input(x)
     return x
 
 @app.route('/', methods=['GET'])
