@@ -10,6 +10,7 @@ app = Flask(__name__)
 CORS(app)
 
 # this is a test comment for git-crypt
+# 2nd commit fto test the git-crypt
 
 
 model = load_model('model.h5')
