@@ -9,6 +9,9 @@ import numpy as np
 app = Flask(__name__)
 CORS(app)
 
+# this is a test comment for git-crypt
+
+
 model = load_model('model.h5')
 
 #Allow files with extension png, jpg and jpeg
